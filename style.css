@@ -1,21 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap");
+
 :root {
   --color-bg: #222831;
   --color-bg-2: #393e46;
+  --color-black: #000000;
   --color-main: #7971ea;
   --color-main-dull: #5f59b3;
   --color-font: #eeeeee;
 }
+/* Scroll bar*/
+html {
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--color-bg-2);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--color-main);
+  border-radius: 2rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-main-dull);
+  transition: 0.3s;
+}
+/* main */
 body {
   font-family: "Fira code", monospace;
-  background-color: var(--color-bg-2);
-  /* background-image: url('Images/hero-bg.png'); */
+  background-color: var(--color-bg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 header {
-  background-color: var(--color-bg);
-  /* background-color: var(--color-main); */
+  background-image: url("Images/hero-bg.png");
+  margin-left: 3rem;
+  margin-right: 3rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
   color: var(--color-font);
+}
+.navbar-brand {
+  font-family: "Rubik Glitch", cursive;
+  font-size: 2rem;
+  letter-spacing: 0.3rem;
 }
 nav,
 main {
@@ -24,29 +59,29 @@ main {
 }
 
 /* Link Under Line */
-a {
-  /* color: #18272F; */
+.a{
   color: var(--color-font);
   position: relative;
   text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.07rem;
 }
 
 .a::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 2px;
   border-radius: 2px;
-  background-color:var(--color-main);
+  background-color: var(--color-main);
   text-decoration: none;
   bottom: 0;
   left: 0;
   transform-origin: right;
   transform: scaleX(0);
-  transition: transform .5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
-.a:hover
-{
+.a:hover {
   color: var(--color-main);
   text-decoration: none;
 }
@@ -64,17 +99,43 @@ a {
   width: 100%;
   align-items: center;
 }
-.main .con p,
-.main .con div{
+.main .con-cat {
+  margin-top: 2rem;
+  background-image: url("Images/hero-bg.png");
+  background-size: cover;
+  height: 600px;
+  border-radius: 1rem;
+  width: 100%;
+  align-items: center;
+}
+.main .con .text-white,
+.main .con div {
   margin-top: 2rem;
 }
-
-.con .col-6 h2
-{
+.mar {
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+.con .col-6 h2,
+h2 {
   color: var(--color-main);
+
 }
 
+/* Category */
 
+/* Product Card */
+.card
+{
+  border-radius: 1rem;
+  transition: 0.5s;
+}
+.card:hover
+{
+  outline: solid 0.3rem var(--color-main);
+  cursor: pointer;
+  box-shadow: var(--color-main) 0px 20px 30px -10px;
+}
 /* buttons */
 .btn-main {
   background-color: var(--color-main);
@@ -92,7 +153,8 @@ a {
 }
 .btn-outline {
   background-color: transparent;
-  border-color: var(--color-main);
+  /* border-color: var(--color-main); */
+  border: solid 2px var(--color-main);
   color: var(--color-main);
   outline: none;
   font-weight: 700;
